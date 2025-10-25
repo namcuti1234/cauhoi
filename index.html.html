@@ -52,6 +52,8 @@
       <div class="major-card"><h3>Marketing & Truyền Thông</h3><p>Chiến lược thương hiệu, quảng cáo, nội dung sáng tạo.</p></div>
       <div class="major-card"><h3>Y Tế & Công Tác Xã Hội</h3><p>Chăm sóc sức khỏe, hỗ trợ cộng đồng, tư vấn xã hội.</p></div>
       <div class="major-card"><h3>Giáo Dục</h3><p>Giảng dạy, nghiên cứu giáo dục, phát triển chương trình học.</p></div>
+      <div class="major-card"><h3>Kỹ Thuật & Cơ Khí</h3><p>Thiết kế cơ khí, chế tạo máy, nghiên cứu kỹ thuật.</p></div>
+      <div class="major-card"><h3>Ngôn Ngữ & Văn Hóa</h3><p>Biên phiên dịch, nghiên cứu văn hóa, giảng dạy ngoại ngữ.</p></div>
     </div>
   </section>
 </main>
@@ -61,28 +63,16 @@
 </footer>
 
 <script>
-// 20 câu hỏi MBTI rút gọn
+// Câu hỏi với 4 đáp án
 const questionsData = [
   { q: "Bạn thích dành thời gian một mình hay với người khác?", a: ["Hoàn toàn một mình", "Thỉnh thoảng với người khác", "Thường xuyên với người khác", "Luôn thích đông người"], type: "E" },
   { q: "Bạn tin vào trực giác hay dữ kiện cụ thể?", a: ["Chỉ dữ kiện", "Thỉnh thoảng trực giác", "Thường xuyên trực giác", "Hoàn toàn trực giác"], type: "N" },
   { q: "Khi ra quyết định, bạn dựa trên lý trí hay cảm xúc?", a: ["Hoàn toàn lý trí", "Thường lý trí", "Thường cảm xúc", "Hoàn toàn cảm xúc"], type: "T" },
   { q: "Bạn thích kế hoạch rõ ràng hay linh hoạt?", a: ["Luôn kế hoạch", "Thường kế hoạch", "Thường linh hoạt", "Hoàn toàn linh hoạt"], type: "J" },
-  { q: "Bạn dễ dàng kết bạn mới?", a: ["Rất khó", "Khó", "Dễ", "Rất dễ"], type: "E" },
-  { q: "Bạn hay mơ mộng và tưởng tượng?", a: ["Hiếm khi", "Thỉnh thoảng", "Thường xuyên", "Luôn luôn"], type: "N" },
-  { q: "Bạn ưu tiên cảm xúc hay phân tích?", a: ["Chỉ phân tích", "Thường phân tích", "Thường cảm xúc", "Hoàn toàn cảm xúc"], type: "T" },
-  { q: "Bạn thích làm việc theo kế hoạch hay tùy hứng?", a: ["Luôn kế hoạch", "Thường kế hoạch", "Thường linh hoạt", "Hoàn toàn linh hoạt"], type: "J" },
-  { q: "Bạn hay tham gia hoạt động xã hội?", a: ["Rất ít", "Ít", "Thường xuyên", "Rất thường xuyên"], type: "E" },
-  { q: "Bạn có chú ý đến chi tiết hay bức tranh tổng thể?", a: ["Chi tiết", "Phần lớn chi tiết", "Tổng thể", "Chủ yếu tổng thể"], type: "N" },
-  { q: "Bạn xử lý xung đột dựa trên gì?", a: ["Lý trí", "Thường lý trí", "Cảm xúc", "Hoàn toàn cảm xúc"], type: "T" },
-  { q: "Bạn thích công việc có cấu trúc hay tự do?", a: ["Cấu trúc hoàn toàn", "Thường có cấu trúc", "Tự do", "Hoàn toàn tự do"], type: "J" },
-  { q: "Bạn thích trò chuyện với người lạ?", a: ["Không bao giờ", "Hiếm khi", "Thường xuyên", "Luôn luôn"], type: "E" },
-  { q: "Bạn suy nghĩ về ý nghĩa sâu xa?", a: ["Hiếm khi", "Thỉnh thoảng", "Thường xuyên", "Luôn luôn"], type: "N" },
-  { q: "Bạn dễ bị ảnh hưởng bởi cảm xúc?", a: ["Không bao giờ", "Hiếm khi", "Thường xuyên", "Rất thường xuyên"], type: "T" },
-  { q: "Bạn thích công việc có kế hoạch dài hạn?", a: ["Hoàn toàn", "Thường", "Thỉnh thoảng", "Không bao giờ"], type: "J" },
-  { q: "Bạn cảm thấy tràn đầy năng lượng khi ở cùng nhóm?", a: ["Hoàn toàn không", "Ít", "Thường xuyên", "Rất nhiều"], type: "E" },
-  { q: "Bạn thích thử nghiệm và sáng tạo?", a: ["Hiếm khi", "Thỉnh thoảng", "Thường xuyên", "Luôn luôn"], type: "N" },
-  { q: "Bạn đưa ra quyết định dựa trên chuẩn mực nào?", a: ["Lý trí", "Thường lý trí", "Cảm xúc", "Hoàn toàn cảm xúc"], type: "T" },
-  { q: "Bạn có thích lập kế hoạch chi tiết không?", a: ["Không bao giờ", "Hiếm khi", "Thường xuyên", "Luôn luôn"], type: "J" }
+  { q: "Bạn có thích thử thách mới?", a: ["Hoàn toàn không", "Thỉnh thoảng", "Thường xuyên", "Luôn thích"], type: "E" },
+  { q: "Bạn học tốt bằng lý thuyết hay thực hành?", a: ["Chỉ thực hành", "Thỉnh thoảng thực hành", "Thường xuyên lý thuyết", "Hoàn toàn lý thuyết"], type: "N" },
+  { q: "Bạn quyết định nhanh hay suy nghĩ kỹ?", a: ["Hoàn toàn suy nghĩ kỹ", "Thường suy nghĩ kỹ", "Thường quyết định nhanh", "Hoàn toàn quyết định nhanh"], type: "T" },
+  { q: "Bạn có thích thay đổi môi trường làm việc?", a: ["Không bao giờ", "Hiếm khi", "Thỉnh thoảng", "Luôn"], type: "P" }
 ];
 
 const questionsDiv = document.getElementById("questions");
@@ -108,6 +98,7 @@ function submitQuiz() {
       case "N": val>=2 ? scores.N++ : scores.S++; break;
       case "T": val>=2 ? scores.T++ : scores.F++; break;
       case "J": val>=2 ? scores.J++ : scores.P++; break;
+      case "P": val>=2 ? scores.P++ : scores.J++; break;
     }
   }
 
@@ -127,54 +118,11 @@ function submitQuiz() {
   };
 
   let suggestions = new Set();
-  // Nhóm N + T
-  if (type.includes("N") && type.includes("T")) {
-    suggestions.add("Công Nghệ Thông Tin");
-    suggestions.add("Khoa Học Dữ Liệu");
-    suggestions.add("Kỹ Sư");
-    suggestions.add("Nghiên Cứu Khoa Học");
-    suggestions.add("Phát Triển Game");
-    suggestions.add("Trí Tuệ Nhân Tạo");
-    suggestions.add("Phân Tích Hệ Thống");
-  }
-  // Nhóm E + F
-  if (type.includes("E") && type.includes("F")) {
-    suggestions.add("Marketing & Truyền Thông");
-    suggestions.add("Quảng Cáo");
-    suggestions.add("Nhân Sự");
-    suggestions.add("Giáo Dục Nghề Nghiệp");
-    suggestions.add("PR & Event");
-    suggestions.add("Thiết Kế Nội Dung");
-    suggestions.add("Tư Vấn Khách Hàng");
-  }
-  // Nhóm I + S
-  if (type.includes("I") && type.includes("S")) {
-    suggestions.add("Tâm Lý Học");
-    suggestions.add("Giáo Dục");
-    suggestions.add("Y Tế");
-    suggestions.add("Công Tác Xã Hội");
-    suggestions.add("Dược");
-    suggestions.add("Nghiên Cứu Sinh Học");
-    suggestions.add("Quản Lý Thư Viện / Lưu Trữ");
-  }
-  // Nhóm J
-  if (type.includes("J")) {
-    suggestions.add("Quản Trị Kinh Doanh");
-    suggestions.add("Tài Chính - Kế Toán");
-    suggestions.add("Quản Lý Dự Án");
-    suggestions.add("Phân Tích Chiến Lược");
-    suggestions.add("Luật / Pháp Lý");
-    suggestions.add("Kiểm Toán");
-  }
-  // Nhóm P
-  if (type.includes("P")) {
-    suggestions.add("Thiết Kế Đồ Họa");
-    suggestions.add("Phát Triển Nội Dung");
-    suggestions.add("Khởi Nghiệp Sáng Tạo");
-    suggestions.add("Nghệ Thuật & Âm Nhạc");
-    suggestions.add("Truyền Thông Kỹ Thuật Số");
-    suggestions.add("Sản Xuất Video / Multimedia");
-  }
+  if (type.includes("N") && type.includes("T")) suggestions.add("Công Nghệ Thông Tin").add("Khoa Học Dữ Liệu").add("Kỹ Thuật & Cơ Khí").add("Nghiên Cứu Khoa Học");
+  if (type.includes("E") && type.includes("F")) suggestions.add("Marketing & Truyền Thông").add("Ngôn Ngữ & Văn Hóa").add("Nhân Sự").add("Giáo Dục Nghề Nghiệp");
+  if (type.includes("I") && type.includes("S")) suggestions.add("Tâm Lý Học").add("Giáo Dục").add("Y Tế & Công Tác Xã Hội");
+  if (type.includes("J")) suggestions.add("Quản Trị Kinh Doanh").add("Tài Chính - Kế Toán").add("Quản Lý Dự Án");
+  if (type.includes("P")) suggestions.add("Thiết Kế Đồ Họa").add("Phát Triển Nội Dung").add("Khởi Nghiệp Sáng Tạo");
 
   document.getElementById("personality").innerText = `Bạn thuộc nhóm: ${type} — ${personalityText[type] || "Một cá tính độc đáo! Hãy thử nhiều lĩnh vực để khám phá thêm."}`;
   document.getElementById("suggestions").innerHTML = [...suggestions].map(s=>`<li>${s}</li>`).join("");
